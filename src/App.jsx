@@ -1,27 +1,35 @@
+
 const Hello = (props) => {
+  /*
+  const age = props.age
+  const name = props.name
+  */
+
+  const {name, age} = props;
+  console.log(props);
+
+  //returns the year you were born in.
+  const bornYear = () => new Date().getFullYear() - age
+
   return (
     <div>
-      <p>Hello {props.name}, you are {props.age} years old.</p>
-    </div>
-  )
-}
-
-//git
-
-const Footer = () => {
-  return (
-    <div>
-      greeting app created by <a href="https://github.com/GertenP">Gerten Pilv</a>
+      <p>
+        Hello {name}, you are {age} years old
+      </p>
+      <p>So you were probably born in {bornYear()}</p>
     </div>
   )
 }
 
 const App = () => {
-  const friends = [ "Kaupo Sokhin", "Kardo SOkhin"]
+  const name = 'Kaspar'
+  const age = 277
 
   return (
     <div>
-      <p>{friends}</p>
+      <h1>Tere Kaspar</h1>
+      <Hello name="Maya" age={26 + 10} />
+      <Hello name={name} age={age} />
     </div>
   )
 }
